@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ico="http://iconsulting.biz/dfm" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.type="fact" />
+  <key id="d1" for="node" attr.type="attribute" />
+  <key id="d2" for="edge" attr.type="arc" />
+  <graph id="G" edgedefault="directed" toolversion="1.56.0.0" factSchemaId="d4409ee5-f2e8-4e8e-abe6-18e3f5ff2c7d">
+    <node id="a602a953-099b-45a8-aa71-d0ac47873e7f">
+      <data key="d0">
+        <ico:Fact Name="" Description="" Id="a602a953-099b-45a8-aa71-d0ac47873e7f" X="580" Y="340" BackgroundColor="#FFFFFF" BorderColor="#FFA9A9A9" IsBoldText="false" IsItalicText="false" LoadingFrequency="" HistoricalDepth="0">
+          <ico:Measures />
+        </ico:Fact>
+      </data>
+    </node>
+    <node id="aedce2a6-932b-43a6-b3ed-06c4c6923a0d">
+      <data key="d1">
+        <ico:Attribute Name="L4" Description="" Id="aedce2a6-932b-43a6-b3ed-06c4c6923a0d" X="600" Y="300" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <node id="c7b146e2-f9ec-4d90-af40-fed21d3b17d6">
+      <data key="d1">
+        <ico:Attribute Name="L3" Description="" Id="c7b146e2-f9ec-4d90-af40-fed21d3b17d6" X="563" Y="222" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <node id="a62edecd-689e-4f46-b8cf-61f3e0258e88">
+      <data key="d1">
+        <ico:Attribute Name="L2" Description="" Id="a62edecd-689e-4f46-b8cf-61f3e0258e88" X="518" Y="135" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <node id="6acfbd13-0c30-4f51-aacd-657b7be298da">
+      <data key="d1">
+        <ico:Attribute Name="L1" Description="" Id="6acfbd13-0c30-4f51-aacd-657b7be298da" X="465" Y="40" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <edge id="4eaf8887-789c-46ec-89e7-f9048ba3b723" source="a602a953-099b-45a8-aa71-d0ac47873e7f" target="aedce2a6-932b-43a6-b3ed-06c4c6923a0d" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="0" />
+      </data>
+    </edge>
+    <edge id="714b883c-b17c-4150-bef3-088701e6fc87" source="aedce2a6-932b-43a6-b3ed-06c4c6923a0d" target="c7b146e2-f9ec-4d90-af40-fed21d3b17d6" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="1" />
+      </data>
+    </edge>
+    <edge id="297be731-ad9e-4624-b1fb-4bd6d9ab4fd5" source="c7b146e2-f9ec-4d90-af40-fed21d3b17d6" target="a62edecd-689e-4f46-b8cf-61f3e0258e88" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="1" />
+      </data>
+    </edge>
+    <edge id="fc1244cf-3f23-49fd-bbc9-f738f1a6c64f" source="a62edecd-689e-4f46-b8cf-61f3e0258e88" target="6acfbd13-0c30-4f51-aacd-657b7be298da" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="1" />
+      </data>
+    </edge>
+    <hierarchy id="24e544f1-d22c-407b-bafb-f384921dfcbd" rootArcId="4eaf8887-789c-46ec-89e7-f9048ba3b723" name="L4" description="" note="" />
+  </graph>
+  <additivityMatrix xmlns="" />
+</graphml>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ico="http://iconsulting.biz/dfm" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.type="fact" />
+  <key id="d1" for="node" attr.type="attribute" />
+  <key id="d2" for="edge" attr.type="arc" />
+  <graph id="G" edgedefault="directed" toolversion="1.56.0.0" factSchemaId="bf902d1a-60d6-488b-b75f-2612deefb31d">
+    <node id="79d8be88-530f-4452-b977-267fde56e971">
+      <data key="d0">
+        <ico:Fact Name="" Description="" Id="79d8be88-530f-4452-b977-267fde56e971" X="580" Y="340" BackgroundColor="#FFFFFF" BorderColor="#FFA9A9A9" IsBoldText="false" IsItalicText="false" LoadingFrequency="" HistoricalDepth="0">
+          <ico:Measures />
+        </ico:Fact>
+      </data>
+    </node>
+    <node id="f63c84b1-b5e1-4e9d-b206-c2ec281d937c">
+      <data key="d1">
+        <ico:Attribute Name="Settore" Description="" Id="f63c84b1-b5e1-4e9d-b206-c2ec281d937c" X="600" Y="300" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <node id="91126484-aae7-413b-995b-2bc0acc8a43f">
+      <data key="d1">
+        <ico:Attribute Name="Macro Settore" Description="" Id="91126484-aae7-413b-995b-2bc0acc8a43f" X="563" Y="222" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <edge id="b3169b86-84d9-497f-9543-c448d737830b" source="79d8be88-530f-4452-b977-267fde56e971" target="f63c84b1-b5e1-4e9d-b206-c2ec281d937c" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="0" />
+      </data>
+    </edge>
+    <edge id="d386d77b-4335-4b51-abb8-76235c0f4a80" source="f63c84b1-b5e1-4e9d-b206-c2ec281d937c" target="91126484-aae7-413b-995b-2bc0acc8a43f" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="1" />
+      </data>
+    </edge>
+    <hierarchy id="ccc68974-e7fb-4091-9cf8-e120cf4e8df0" rootArcId="b3169b86-84d9-497f-9543-c448d737830b" name="Settore" description="" note="" />
+  </graph>
+  <additivityMatrix xmlns="" />
+</graphml>

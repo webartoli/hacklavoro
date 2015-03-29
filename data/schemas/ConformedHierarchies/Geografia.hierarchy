@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ico="http://iconsulting.biz/dfm" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.type="fact" />
+  <key id="d1" for="node" attr.type="attribute" />
+  <key id="d2" for="edge" attr.type="arc" />
+  <graph id="G" edgedefault="directed" toolversion="1.56.0.0" factSchemaId="094c28eb-8b3f-4698-a08a-a3c4f8354ab2">
+    <node id="5c2fd869-bcba-4e7a-912d-bc857b733e98">
+      <data key="d0">
+        <ico:Fact Name="" Description="" Id="5c2fd869-bcba-4e7a-912d-bc857b733e98" X="580" Y="340" BackgroundColor="#FFFFFF" BorderColor="#FFA9A9A9" IsBoldText="false" IsItalicText="false" LoadingFrequency="" HistoricalDepth="0">
+          <ico:Measures />
+        </ico:Fact>
+      </data>
+    </node>
+    <node id="dea1dd9c-798b-4e86-9c3f-18ed94c324ab">
+      <data key="d1">
+        <ico:Attribute Name="Regione" Description="" Id="dea1dd9c-798b-4e86-9c3f-18ed94c324ab" X="600" Y="300" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <edge id="cce881b6-b6c0-4631-88fa-8ca3a84aecd7" source="5c2fd869-bcba-4e7a-912d-bc857b733e98" target="dea1dd9c-798b-4e86-9c3f-18ed94c324ab" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="0" />
+      </data>
+    </edge>
+    <hierarchy id="6705d5fb-7dc1-42e2-bb8e-eece3924b866" rootArcId="cce881b6-b6c0-4631-88fa-8ca3a84aecd7" name="Regione" description="" note="" />
+  </graph>
+  <additivityMatrix xmlns="" />
+</graphml>

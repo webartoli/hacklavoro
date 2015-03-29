@@ -1,0 +1,27 @@
+<project name="HackLavoro" id="084fbb70-422f-4a1f-b1ff-244480cc2849" toolversion="1.56.0.0">
+  <datawarehouse>
+    <datamarts>
+      <datamart name="Datamart" id="0dfd269b-6b8c-4b9d-9ff4-23af2fd7b2fe">
+        <factschemas>
+          <factschema name="Lavoro" />
+        </factschemas>
+      </datamart>
+    </datamarts>
+  </datawarehouse>
+  <conformedHierarchies>
+    <conformedHierarchy name="Qualifica Professionale TODELETE" />
+    <conformedHierarchy name="Tempo" />
+    <conformedHierarchy name="Professione ISTAT" />
+    <conformedHierarchy name="Settore Economico" />
+    <conformedHierarchy name="Territorio" />
+  </conformedHierarchies>
+  <views />
+  <areas />
+  <customProperties>
+    <attributes />
+    <measures />
+  </customProperties>
+  <projectOptions>
+    <logicModelingOptions name="" isEditable="false" />
+  </projectOptions>
+</project>

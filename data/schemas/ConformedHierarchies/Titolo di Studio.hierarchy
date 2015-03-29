@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ico="http://iconsulting.biz/dfm" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="node" attr.type="fact" />
+  <key id="d1" for="node" attr.type="attribute" />
+  <key id="d2" for="edge" attr.type="arc" />
+  <graph id="G" edgedefault="directed" toolversion="1.56.0.0" factSchemaId="4d264244-e85a-46ba-9ead-5647f11c8147">
+    <node id="8e567f6b-2ecc-4fd6-bc56-26a032fb4176">
+      <data key="d0">
+        <ico:Fact Name="" Description="" Id="8e567f6b-2ecc-4fd6-bc56-26a032fb4176" X="580" Y="340" BackgroundColor="#FFFFFF" BorderColor="#FFA9A9A9" IsBoldText="false" IsItalicText="false" LoadingFrequency="" HistoricalDepth="0">
+          <ico:Measures />
+        </ico:Fact>
+      </data>
+    </node>
+    <node id="b2ccd290-ab10-4a60-b017-35b0958b9038">
+      <data key="d1">
+        <ico:Attribute Name="Titolo di Studio" Description="" Id="b2ccd290-ab10-4a60-b017-35b0958b9038" X="600" Y="300" BackgroundColor="#FFFFFF" BorderColor="#00539C" IsBoldText="false" IsItalicText="false" IsDescriptive="false" IsOptional="false" IsShared="false" SampleValues="" Note="" MasterId="00000000-0000-0000-0000-000000000000" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" IsCrossDimensional="false" TemporalScenario="UpToDate" SourceTable="" SourceField="">
+          <ico:customProperties />
+        </ico:Attribute>
+      </data>
+    </node>
+    <edge id="4a333046-936b-4054-ac8d-3f695a6c7251" source="8e567f6b-2ecc-4fd6-bc56-26a032fb4176" target="b2ccd290-ab10-4a60-b017-35b0958b9038" IsBoldText="false" IsItalicText="false" HierarchyId="00000000-0000-0000-0000-000000000000" MasterHierarchyId="00000000-0000-0000-0000-000000000000" MasterId="00000000-0000-0000-0000-000000000000">
+      <data key="d2">
+        <ico:Arc Role="" IsConvergence="false" IsOptional="false" IsMultiple="false" IsRecursive="false" IndexOfRecursion="0" SourceConnectorPosition="Auto" IndexOfSameNodesLink="0" />
+      </data>
+    </edge>
+    <hierarchy id="837bfa08-0c56-4aa6-96df-4385fac21457" rootArcId="4a333046-936b-4054-ac8d-3f695a6c7251" name="Titolo di Studio" description="" note="" />
+  </graph>
+  <additivityMatrix xmlns="" />
+</graphml>
