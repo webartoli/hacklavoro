@@ -161,9 +161,8 @@ ALTER TABLE sett_ateco_l4_microsettore OWNER TO sod_hacklavoro;
 
 CREATE TABLE territorio (
     pk_regione integer NOT NULL,
-    ds_regione character varying(255)[],
-    id_ripartizione_geografica integer,
-    ds_ripartizione_geografica character varying(255)[]
+    ds_regione character varying(255),
+    id_regione integer
 );
 
 
@@ -580,7 +579,26 @@ COPY sett_ateco_l4_microsettore (pk_sett_ateco_l4, ds_sett_ateco_l4, fk_sett_ate
 -- Data for Name: territorio; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
 --
 
-COPY territorio (pk_regione, ds_regione, id_ripartizione_geografica, ds_ripartizione_geografica) FROM stdin;
+COPY territorio (pk_regione, ds_regione, id_regione) FROM stdin;
+413	ABRUZZO	1
+417	BASILICATA	2
+418	CALABRIA	3
+415	CAMPANIA	4
+208	EMILIA ROMAGNA	5
+206	FRIULI VENEZIA GIULIA	6
+312	LAZIO	7
+107	LIGURIA	8
+103	LOMBARDIA	9
+311	MARCHE	10
+414	MOLISE	11
+100	PIEMONTE - VALLE D'AOSTA	12
+416	PUGLIA	13
+420	SARDEGNA	14
+419	SICILIA	15
+309	TOSCANA	16
+204	TRENTINO ALTO ADIGE	17
+310	UMBRIA	18
+205	VENETO	20
 \.
 
 
