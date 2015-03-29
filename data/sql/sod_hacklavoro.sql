@@ -30,6 +30,21 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: lavoro; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE TABLE lavoro (
+    id_anno integer NOT NULL,
+    id_prof_istat integer NOT NULL,
+    id_settore_economico integer NOT NULL,
+    id_regione integer NOT NULL,
+    numero_assunzioni integer
+);
+
+
+ALTER TABLE lavoro OWNER TO sod_hacklavoro;
+
+--
 -- Name: prof_istat_l1_grandi_gruppi; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
 --
 
@@ -90,6 +105,57 @@ CREATE TABLE prof_istat_l4_categorie (
 ALTER TABLE prof_istat_l4_categorie OWNER TO sod_hacklavoro;
 
 --
+-- Name: sett_ateco_l1_ipersettore; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE TABLE sett_ateco_l1_ipersettore (
+    pk_sett_ateco_l1 integer NOT NULL,
+    ds_sett_ateco_l1 character varying(255)
+);
+
+
+ALTER TABLE sett_ateco_l1_ipersettore OWNER TO sod_hacklavoro;
+
+--
+-- Name: sett_ateco_l2_macrosettore; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE TABLE sett_ateco_l2_macrosettore (
+    pk_sett_ateco_l2 integer NOT NULL,
+    ds_sett_ateco_l2 character varying(255),
+    fk_sett_ateco_l1 integer
+);
+
+
+ALTER TABLE sett_ateco_l2_macrosettore OWNER TO sod_hacklavoro;
+
+--
+-- Name: sett_ateco_l3_settore; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE TABLE sett_ateco_l3_settore (
+    pk_sett_ateco_l3 integer NOT NULL,
+    ds_sett_ateco_l3 character varying(255),
+    fk_sett_ateco_l2 integer
+);
+
+
+ALTER TABLE sett_ateco_l3_settore OWNER TO sod_hacklavoro;
+
+--
+-- Name: sett_ateco_l4_microsettore; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE TABLE sett_ateco_l4_microsettore (
+    pk_sett_ateco_l4 integer NOT NULL,
+    ds_sett_ateco_l4 character varying(255),
+    fk_sett_ateco_l3 integer
+);
+
+
+ALTER TABLE sett_ateco_l4_microsettore OWNER TO sod_hacklavoro;
+
+--
 -- Name: territorio; Type: TABLE; Schema: public; Owner: sod_hacklavoro; Tablespace: 
 --
 
@@ -102,6 +168,14 @@ CREATE TABLE territorio (
 
 
 ALTER TABLE territorio OWNER TO sod_hacklavoro;
+
+--
+-- Data for Name: lavoro; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
+--
+
+COPY lavoro (id_anno, id_prof_istat, id_settore_economico, id_regione, numero_assunzioni) FROM stdin;
+\.
+
 
 --
 -- Data for Name: prof_istat_l1_grandi_gruppi; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
@@ -412,11 +486,110 @@ COPY prof_istat_l4_categorie (pk_prof_istat_l4, ds_prof_istat_l4, fk_prof_istat_
 
 
 --
+-- Data for Name: sett_ateco_l1_ipersettore; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
+--
+
+COPY sett_ateco_l1_ipersettore (pk_sett_ateco_l1, ds_sett_ateco_l1) FROM stdin;
+2	Industria in senso stretto
+3	Costruzioni
+4	Commercio
+5	Turismo
+6	Altri servizi
+\.
+
+
+--
+-- Data for Name: sett_ateco_l2_macrosettore; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
+--
+
+COPY sett_ateco_l2_macrosettore (pk_sett_ateco_l2, ds_sett_ateco_l2, fk_sett_ateco_l1) FROM stdin;
+201	Industria	2
+301	Costruzioni	3
+401	Commercio	4
+501	Turismo	5
+601	Servizi alle imprese	6
+602	Servizi alle persone	6
+603	Studi professionali	6
+\.
+
+
+--
+-- Data for Name: sett_ateco_l3_settore; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
+--
+
+COPY sett_ateco_l3_settore (pk_sett_ateco_l3, ds_sett_ateco_l3, fk_sett_ateco_l2) FROM stdin;
+20101	Industrie alimentari, delle bevande e del tabacco	201
+20102	Industrie tessili, dell'abbigliamento, del cuoio e delle calzature	201
+20103	Industrie del legno e del mobile	201
+20104	Industrie della carta, cartotecnica e della stampa	201
+20106	Industrie estrattive e della lavorazione dei minerali non metalliferi	201
+20107	Industrie metalmeccaniche ed elettroniche	201
+20108	Industrie chimico-farmaceutiche, della plastica e della gomma	201
+20109	Altre industrie	201
+30101	Costruzioni	301
+40101	Commercio	401
+50101	Servizi turistici, di alloggio e ristorazione	501
+60101	Servizi informatici e delle telecomunicazioni	601
+60102	Servizi avanzati di supporto alle imprese	601
+60103	Servizi operativi di supporto alle imprese e alle persone	601
+60104	Servizi di trasporto, logistica e magazzinaggio	601
+60105	Servizi finanziari e assicurativi	601
+60106	Altri servizi alle imprese	601
+60201	Servizi alle persone	602
+60301	Studi professionali	603
+\.
+
+
+--
+-- Data for Name: sett_ateco_l4_microsettore; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
+--
+
+COPY sett_ateco_l4_microsettore (pk_sett_ateco_l4, ds_sett_ateco_l4, fk_sett_ateco_l3) FROM stdin;
+201010102	Industrie alimentari, delle bevande e del tabacco	20101
+201020103	Industrie tessili, dell'abbigliamento e calzature	20102
+201030104	Industrie del legno e del mobile	20103
+201040105	Industrie della carta, cartotecnica e stampa	20104
+201060101	Estrazione di minerali	20106
+201060108	Industrie della lavorazione dei minerali non metalliferi	20106
+201070111	Industrie elettriche, elettroniche, ottiche e medicali	20107
+201070209	Industrie metallurgiche e dei prodotti in metallo	20107
+201070310	Ind. fabbric. macchin. e attrezzature e dei mezzi di trasporto	20107
+201080106	Industrie chimiche, farmaceutiche e petrolifere	20108
+201080207	Industrie della gomma e delle materie plastiche	20108
+201090113	Ind. beni per la casa, tempo libero e altre manifatturiere	20109
+201090214	Public utilities (energia elettrica, gas, acqua, ambiente)	20109
+301010115	Costruzioni	30101
+401010116	Commercio e riparazione di autoveicoli e motocicli	40101
+401010117	Commercio all'ingrosso	40101
+401010118	Commercio al dettaglio	40101
+501010119	Servizi di alloggio e ristorazione; servizi turistici	50101
+601010122	Servizi informatici e delle telecomunicazioni	60101
+601020123	Servizi avanzati di supporto alle imprese	60102
+601030125	Servizi operativi di supporto alle imprese e alle persone	60103
+601040120	Servizi di trasporto, logistica e magazzinaggio	60104
+601050124	Servizi finanziari e assicurativi	60105
+601060121	Servizi dei media e della comunicazione	60106
+602010126	Istruzione e servizi formativi privati	60201
+602010227	Sanità , assistenza sociale e servizi sanitari privati	60201
+602010328	Servizi culturali, sportivi e altri servizi alle persone	60201
+603010129	Studi professionali	60301
+\.
+
+
+--
 -- Data for Name: territorio; Type: TABLE DATA; Schema: public; Owner: sod_hacklavoro
 --
 
 COPY territorio (pk_regione, ds_regione, id_ripartizione_geografica, ds_ripartizione_geografica) FROM stdin;
 \.
+
+
+--
+-- Name: lavoro_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+ALTER TABLE ONLY lavoro
+    ADD CONSTRAINT lavoro_pkey PRIMARY KEY (id_anno, id_prof_istat, id_settore_economico, id_regione);
 
 
 --
@@ -452,11 +625,50 @@ ALTER TABLE ONLY prof_istat_l4_categorie
 
 
 --
+-- Name: sett_ateco_l1_ipersettore_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+ALTER TABLE ONLY sett_ateco_l1_ipersettore
+    ADD CONSTRAINT sett_ateco_l1_ipersettore_pkey PRIMARY KEY (pk_sett_ateco_l1);
+
+
+--
+-- Name: sett_ateco_l2_macrosettore_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+ALTER TABLE ONLY sett_ateco_l2_macrosettore
+    ADD CONSTRAINT sett_ateco_l2_macrosettore_pkey PRIMARY KEY (pk_sett_ateco_l2);
+
+
+--
+-- Name: sett_ateco_l3_settore_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+ALTER TABLE ONLY sett_ateco_l3_settore
+    ADD CONSTRAINT sett_ateco_l3_settore_pkey PRIMARY KEY (pk_sett_ateco_l3);
+
+
+--
+-- Name: sett_ateco_l4_microsettore_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+ALTER TABLE ONLY sett_ateco_l4_microsettore
+    ADD CONSTRAINT sett_ateco_l4_microsettore_pkey PRIMARY KEY (pk_sett_ateco_l4);
+
+
+--
 -- Name: territorio_pkey; Type: CONSTRAINT; Schema: public; Owner: sod_hacklavoro; Tablespace: 
 --
 
 ALTER TABLE ONLY territorio
     ADD CONSTRAINT territorio_pkey PRIMARY KEY (pk_regione);
+
+
+--
+-- Name: fki_lavoro_fk_prof_istat; Type: INDEX; Schema: public; Owner: sod_hacklavoro; Tablespace: 
+--
+
+CREATE INDEX fki_lavoro_fk_prof_istat ON lavoro USING btree (id_prof_istat);
 
 
 --
@@ -478,6 +690,14 @@ CREATE INDEX fki_prof_istat_l3_l2 ON prof_istat_l3_classi USING btree (fk_prof_i
 --
 
 CREATE INDEX fki_prof_istat_l4_l3 ON prof_istat_l4_categorie USING btree (fk_prof_istat_l3);
+
+
+--
+-- Name: lavoro_fk_prof_istat; Type: FK CONSTRAINT; Schema: public; Owner: sod_hacklavoro
+--
+
+ALTER TABLE ONLY lavoro
+    ADD CONSTRAINT lavoro_fk_prof_istat FOREIGN KEY (id_prof_istat) REFERENCES prof_istat_l4_categorie(pk_prof_istat_l4);
 
 
 --
