@@ -98,102 +98,20 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Microsoft Excel Input L4</from><to>Sort rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Sort rows</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Microsoft Excel Input L3</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Microsoft Excel Input L2</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Merge Join 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Microsoft Excel Input L1</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 2</from><to>Merge Join 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join 3</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>QUALIFICHE_PROFESSIONALI Table output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Excel Input Professione ISTAT L1 - Grandi Gruppi</from><to>Select values L1</to><enabled>Y</enabled> </hop>
+  <hop> <from>Excel Input Professione ISTAT L2 - Gruppi</from><to>Select values L2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Excel Input Professione ISTAT L3 - Classi</from><to>Select values L3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Excel Input Professione ISTAT L4 - Categorie</from><to>Select values L4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values L1</from><to>Table &#x27;PROF_ISTAT_L1_GRANDI_GRUPPI&#x27; output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values L2</from><to>Block this step until step L1 finish</to><enabled>Y</enabled> </hop>
+  <hop> <from>Block this step until step L1 finish</from><to>Table &#x27;PROF_ISTAT_L2_GRUPPI&#x27; output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Block this step until step L2 finish</from><to>Table &#x27;PROF_ISTAT_L3_CLASSI&#x27; output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values L3</from><to>Block this step until step L2 finish</to><enabled>Y</enabled> </hop>
+  <hop> <from>Block this step until step L3 finish</from><to>Table &#x27;PROF_ISTAT_L4_CATEGORIE&#x27; output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values L4</from><to>Block this step until step L3 finish</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Sort rows</step1>
-<step2>Microsoft Excel Input L3</step2>
-    <keys_1>
-      <key>ID_QUALIFICA_PROFESSIONALE_L3</key>
-    </keys_1>
-    <keys_2>
-      <key>ID_QUALIFICA_PROFESSIONALE_L3</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>314</xloc>
-      <yloc>118</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 2</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Merge Join</step1>
-<step2>Microsoft Excel Input L2</step2>
-    <keys_1>
-      <key>ID_QUALIFICA_PROFESSIONALE_L2</key>
-    </keys_1>
-    <keys_2>
-      <key>ID_QUALIFICA_PROFESSIONALE_L2</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>314</xloc>
-      <yloc>206</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join 3</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>INNER</join_type>
-<step1>Merge Join 2</step1>
-<step2>Microsoft Excel Input L1</step2>
-    <keys_1>
-      <key>ID_QUALIFICA_PROFESSIONALE_L1</key>
-    </keys_1>
-    <keys_2>
-      <key>ID_QUALIFICA_PROFESSIONALE_L1</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>313</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Microsoft Excel Input L1</name>
+    <name>Excel Input Professione ISTAT L1 - Grandi Gruppi</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -233,7 +151,7 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -278,14 +196,14 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>169</xloc>
-      <yloc>290</yloc>
+      <xloc>160</xloc>
+      <yloc>20</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Microsoft Excel Input L2</name>
+    <name>Excel Input Professione ISTAT L2 - Gruppi</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -342,6 +260,18 @@
         <decimal/>
         <group/>
       </field>
+      <field>
+        <name>ID_QUALIFICA_PROFESSIONALE_L1</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
     </fields>
     <sheets>
       <sheet>
@@ -370,14 +300,14 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>166</xloc>
-      <yloc>207</yloc>
+      <xloc>160</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Microsoft Excel Input L3</name>
+    <name>Excel Input Professione ISTAT L3 - Classi</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -434,6 +364,18 @@
         <decimal/>
         <group/>
       </field>
+      <field>
+        <name>ID_QUALIFICA_PROFESSIONALE_L2</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
     </fields>
     <sheets>
       <sheet>
@@ -462,14 +404,14 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>164</xloc>
-      <yloc>119</yloc>
+      <xloc>160</xloc>
+      <yloc>180</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Microsoft Excel Input L4</name>
+    <name>Excel Input Professione ISTAT L4 - Categorie</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -503,42 +445,6 @@
     </file>
     <fields>
       <field>
-        <name>ID_QUALIFICA_PROFESSIONALE_L1</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>ID_QUALIFICA_PROFESSIONALE_L2</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>ID_QUALIFICA_PROFESSIONALE_L3</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
         <name>ID_QUALIFICA_PROFESSIONALE_L4</name>
         <type>Number</type>
         <length>-1</length>
@@ -558,6 +464,18 @@
         <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>ID_QUALIFICA_PROFESSIONALE_L3</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -590,14 +508,259 @@
     <spreadsheet_type>POI</spreadsheet_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>162</xloc>
-      <yloc>45</yloc>
+      <xloc>160</xloc>
+      <yloc>260</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>QUALIFICHE_PROFESSIONALI Table output</name>
+    <name>Select values L1</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L1</name>
+        <rename>PK_PROF_ISTAT_L1</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DS_QUALIFICA_PROFESSIONALE_L1</name>
+        <rename>DS_PROF_ISTAT_L1</rename>
+        <type>String</type>
+        <length>255</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>20</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values L2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L2</name>
+        <rename>PK_PROF_ISTAT_L2</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DS_QUALIFICA_PROFESSIONALE_L2</name>
+        <rename>DS_PROF_ISTAT_L2</rename>
+        <type>String</type>
+        <length>255</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L1</name>
+        <rename>FK_PROF_ISTAT_L1</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>100</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values L3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L3</name>
+        <rename>PK_PROF_ISTAT_L3</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DS_QUALIFICA_PROFESSIONALE_L3</name>
+        <rename>DS_PROF_ISTAT_L3</rename>
+        <type>String</type>
+        <length>255</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L2</name>
+        <rename>FK_PROF_ISTAT_L2</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>180</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values L4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L4</name>
+        <rename>PK_PROF_ISTAT_L4</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>DS_QUALIFICA_PROFESSIONALE_L4</name>
+        <rename>DS_PROF_ISTAT_L4</rename>
+        <type>String</type>
+        <length>255</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ID_QUALIFICA_PROFESSIONALE_L3</name>
+        <rename>FK_PROF_ISTAT_L3</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>260</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table &#x27;PROF_ISTAT_L1_GRANDI_GRUPPI&#x27; output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -609,12 +772,12 @@
            </partitioning>
     <connection>SOD HackLavoro</connection>
     <schema/>
-    <table>QUALIFICHE_PROFESSIONALI</table>
+    <table>PROF_ISTAT_L1_GRANDI_GRUPPI</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
+    <specify_fields>N</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -625,50 +788,18 @@
     <return_keys>N</return_keys>
     <return_field/>
     <fields>
-        <field>
-          <column_name>ID_QUALIFICA_PROFESSIONALE_L1</column_name>
-          <stream_name>ID_QUALIFICA_PROFESSIONALE_L1</stream_name>
-        </field>
-        <field>
-          <column_name>DS_QUALIFICA_PROFESSIONALE_L1</column_name>
-          <stream_name>DS_QUALIFICA_PROFESSIONALE_L1</stream_name>
-        </field>
-        <field>
-          <column_name>ID_QUALIFICA_PROFESSIONALE_L2</column_name>
-          <stream_name>ID_QUALIFICA_PROFESSIONALE_L2</stream_name>
-        </field>
-        <field>
-          <column_name>DS_QUALIFICA_PROFESSIONALE_L2</column_name>
-          <stream_name>DS_QUALIFICA_PROFESSIONALE_L2</stream_name>
-        </field>
-        <field>
-          <column_name>ID_QUALIFICA_PROFESSIONALE_L3</column_name>
-          <stream_name>ID_QUALIFICA_PROFESSIONALE_L3</stream_name>
-        </field>
-        <field>
-          <column_name>DS_QUALIFICA_PROFESSIONALE_L3</column_name>
-          <stream_name>DS_QUALIFICA_PROFESSIONALE_L3</stream_name>
-        </field>
-        <field>
-          <column_name>ID_QUALIFICA_PROFESSIONALE_L4</column_name>
-          <stream_name>ID_QUALIFICA_PROFESSIONALE_L4</stream_name>
-        </field>
-        <field>
-          <column_name>DS_QUALIFICA_PROFESSIONALE_L4</column_name>
-          <stream_name>DS_QUALIFICA_PROFESSIONALE_L4</stream_name>
-        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>585</xloc>
-      <yloc>284</yloc>
+      <xloc>820</xloc>
+      <yloc>20</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
+    <name>Block this step until step L1 finish</name>
+    <type>BlockUntilStepsFinish</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -677,50 +808,23 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>ID_QUALIFICA_PROFESSIONALE_L1</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DS_QUALIFICA_PROFESSIONALE_L1</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ID_QUALIFICA_PROFESSIONALE_L2</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DS_QUALIFICA_PROFESSIONALE_L2</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ID_QUALIFICA_PROFESSIONALE_L3</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DS_QUALIFICA_PROFESSIONALE_L3</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>ID_QUALIFICA_PROFESSIONALE_L4</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DS_QUALIFICA_PROFESSIONALE_L4</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
+    <steps>
+      <step>
+        <name>Table &#x27;PROF_ISTAT_L1_GRANDI_GRUPPI&#x27; output</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>410</xloc>
-      <yloc>286</yloc>
+      <xloc>560</xloc>
+      <yloc>100</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
+    <name>Table &#x27;PROF_ISTAT_L2_GRUPPI&#x27; output</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -729,25 +833,155 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <connection>SOD HackLavoro</connection>
+    <schema/>
+    <table>PROF_ISTAT_L2_GRUPPI</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
-      <field>
-        <name>ID_QUALIFICA_PROFESSIONALE_L4</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <presorted>N</presorted>
-      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>316</xloc>
-      <yloc>44</yloc>
+      <xloc>820</xloc>
+      <yloc>100</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Block this step until step L2 finish</name>
+    <type>BlockUntilStepsFinish</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <steps>
+      <step>
+        <name>Table &#x27;PROF_ISTAT_L2_GRUPPI&#x27; output</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>553</xloc>
+      <yloc>180</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table &#x27;PROF_ISTAT_L3_CLASSI&#x27; output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>SOD HackLavoro</connection>
+    <schema/>
+    <table>PROF_ISTAT_L3_CLASSI</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>813</xloc>
+      <yloc>180</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Block this step until step L3 finish</name>
+    <type>BlockUntilStepsFinish</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <steps>
+      <step>
+        <name>Table &#x27;PROF_ISTAT_L3_CLASSI&#x27; output</name>
+        <CopyNr>0</CopyNr>
+        </step>
+      </steps>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>559</xloc>
+      <yloc>259</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table &#x27;PROF_ISTAT_L4_CATEGORIE&#x27; output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>SOD HackLavoro</connection>
+    <schema/>
+    <table>PROF_ISTAT_L4_CATEGORIE</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>819</xloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
